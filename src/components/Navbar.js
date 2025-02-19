@@ -1,18 +1,6 @@
 import React from "react";
 import logo from "../images/logo.svg";
-
-const navLinks = [
-  { id: 1, href: "#home", text: "Home" },
-  { id: 2, href: "#about", text: "About" },
-  { id: 3, href: "#services", text: "Services" },
-  { id: 4, href: "#tours", text: "Tours" },
-];
-
-const navIcons = [
-  { id: 1, href: "https://www.facebook.com", icon: "fab fa-facebook" },
-  { id: 2, href: "https://www.twitter.com", icon: "fab fa-twitter" },
-  { id: 3, href: "https://www.squarespace.com", icon: "fab fa-squarespace" },
-];
+import { pageLinks, socialLinks } from "../data/data.js";
 
 const Navbar = () => {
   return (
@@ -32,7 +20,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className="nav-links" id="nav-links">
-          {navLinks.map(({ id, href, text }) => (
+          {pageLinks.map(({ id, href, text }) => (
             <li key={id}>
               <a href={href} className="nav-link">
                 {text}
@@ -43,14 +31,9 @@ const Navbar = () => {
 
         {/* Social Icons */}
         <ul className="nav-icons">
-          {navIcons.map(({ id, href, icon }) => (
+          {socialLinks.map(({ id, href, icon }) => (
             <li key={id}>
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-icon"
-              >
+              <a href={href} rel="noopener noreferrer" className="nav-icon">
                 <i className={icon}></i>
               </a>
             </li>
